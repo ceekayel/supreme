@@ -60,7 +60,7 @@ get_header(); // Loads the header.php template. ?>
 
 					<?php
 						// If comments are open or we have at least one comment, load the comments template.
-						$theme_options = get_option(supreme_prefix().'_theme_settings');
+						$theme_options = get_option('supreme_theme_settings');
 						$enable_comments = $theme_options['enable_comments'];
 						if ( $enable_comments ) {
 							if ( comments_open() || '0' != get_comments_number() )

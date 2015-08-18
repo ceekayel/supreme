@@ -43,11 +43,11 @@
 
 						<div class="byline">
 							<span class="bbp-topic-reply-count">
-								<?php _e( 'Replies:', 'bbpress' ); ?> <?php bbp_show_lead_topic() ? bbp_topic_reply_count() : bbp_topic_post_count(); ?>
+								<?php _e( 'Replies:', 'supreme' ); ?> <?php bbp_show_lead_topic() ? bbp_topic_reply_count() : bbp_topic_post_count(); ?>
 							</span><!-- .bbp-topic-reply-count -->
 							<span class="bbp-topic-freshness">
 								<?php do_action( 'bbp_theme_before_topic_freshness_link' ); ?>
-								<?php _e( 'Freshness:', 'bbpress' ); ?> <?php bbp_topic_freshness_link(); ?>
+								<?php _e( 'Freshness:', 'supreme' ); ?> <?php bbp_topic_freshness_link(); ?>
 								<?php do_action( 'bbp_theme_after_topic_freshness_link' ); ?>
 							</span><!-- .bbp-topic-freshness -->
 							<span class="bbp-topic-freshness-author">
@@ -60,7 +60,7 @@
 
 								<?php do_action( 'bbp_theme_before_topic_started_in' ); ?>
 
-								<span class="bbp-topic-started-in"><?php printf( __( '<a href="%1$s">%2$s</a>', 'bbpress' ), bbp_get_forum_permalink( bbp_get_topic_forum_id() ), bbp_get_forum_title( bbp_get_topic_forum_id() ) ); ?></span>
+								<span class="bbp-topic-started-in"><?php printf( __( '<a href="%1$s">%2$s</a>', 'supreme' ), bbp_get_forum_permalink( bbp_get_topic_forum_id() ), bbp_get_forum_title( bbp_get_topic_forum_id() ) ); ?></span>
 
 								<?php do_action( 'bbp_theme_after_topic_started_in' ); ?>
 

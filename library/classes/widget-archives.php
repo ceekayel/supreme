@@ -29,7 +29,7 @@ class Hybrid_Widget_Archives extends WP_Widget {
 		/* Set up the widget options. */
 		$widget_options = array(
 			'classname' => 'archives',
-			'description' => esc_html__( 'An advanced widget that gives you total control over the output of your archives.', 'hybrid-core' )
+			'description' => esc_html__( 'An advanced widget that gives you total control over the output of your archives.', 'supreme' )
 		);
 
 		/* Set up the widget control options. */
@@ -41,7 +41,7 @@ class Hybrid_Widget_Archives extends WP_Widget {
 		/* Create the widget. */
 		$this->WP_Widget(
 			'hybrid-archives',			// $this->id_base
-			__( 'Archives', 'hybrid-core' ),	// $this->name
+			__( 'Archives', 'supreme' ),	// $this->name
 			$widget_options,			// $this->widget_options
 			$control_options			// $this->control_options
 		);
@@ -76,19 +76,19 @@ class Hybrid_Widget_Archives extends WP_Widget {
 
 			/* Create a title for the drop-down based on the archive type. */
 			if ( 'yearly' == $args['type'] )
-				$option_title = esc_html__( 'Select Year', 'hybrid-core' );
+				$option_title = esc_html__( 'Select Year', 'supreme' );
 
 			elseif ( 'monthly' == $args['type'] )
-				$option_title = esc_html__( 'Select Month', 'hybrid-core' );
+				$option_title = esc_html__( 'Select Month', 'supreme' );
 
 			elseif ( 'weekly' == $args['type'] )
-				$option_title = esc_html__( 'Select Week', 'hybrid-core' );
+				$option_title = esc_html__( 'Select Week', 'supreme' );
 
 			elseif ( 'daily' == $args['type'] )
-				$option_title = esc_html__( 'Select Day', 'hybrid-core' );
+				$option_title = esc_html__( 'Select Day', 'supreme' );
 
 			elseif ( 'postbypost' == $args['type'] || 'alpha' == $args['type'] )
-				$option_title = esc_html__( 'Select Post', 'hybrid-core' );
+				$option_title = esc_html__( 'Select Post', 'supreme' );
 
 			/* Output the <select> element and each <option>. */
 			echo '<p><select name="archive-dropdown" onchange=\'document.location.href=this.options[this.selectedIndex].value;\'>';
@@ -138,7 +138,7 @@ class Hybrid_Widget_Archives extends WP_Widget {
 
 		/* Set up the default form values. */
 		$defaults = array(
-			'title' => esc_attr__( 'Archives', 'hybrid-core' ),
+			'title' => esc_attr__( 'Archives', 'supreme' ),
 			'limit' => 10,
 			'type' => 'monthly',
 			'format' => 'html',
@@ -151,15 +151,15 @@ class Hybrid_Widget_Archives extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
 		/* Create an array of archive types. */
-		$type = array( 'alpha' => esc_attr__( 'Alphabetical', 'hybrid-core' ), 'daily' => esc_attr__( 'Daily', 'hybrid-core' ), 'monthly' => esc_attr__( 'Monthly', 'hybrid-core' ),'postbypost' => esc_attr__( 'Post By Post', 'hybrid-core' ), 'weekly' => esc_attr__( 'Weekly', 'hybrid-core' ), 'yearly' => esc_attr__( 'Yearly', 'hybrid-core' ) );
+		$type = array( 'alpha' => esc_attr__( 'Alphabetical', 'supreme' ), 'daily' => esc_attr__( 'Daily', 'supreme' ), 'monthly' => esc_attr__( 'Monthly', 'supreme' ),'postbypost' => esc_attr__( 'Post By Post', 'supreme' ), 'weekly' => esc_attr__( 'Weekly', 'supreme' ), 'yearly' => esc_attr__( 'Yearly', 'supreme' ) );
 
 		/* Create an array of archive formats. */
-		$format = array( 'custom' => esc_attr__( 'Custom', 'hybrid-core' ), 'html' => esc_attr__( 'HTML', 'hybrid-core' ), 'option' => esc_attr__( 'Option', 'hybrid-core' ) );
+		$format = array( 'custom' => esc_attr__( 'Custom', 'supreme' ), 'html' => esc_attr__( 'HTML', 'supreme' ), 'option' => esc_attr__( 'Option', 'supreme' ) );
 		?>
 
 		<div class="hybrid-widget-controls columns-2">
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'hybrid-core' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'supreme' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		<p>
@@ -195,7 +195,7 @@ class Hybrid_Widget_Archives extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'show_post_count' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['show_post_count'], true ); ?> id="<?php echo $this->get_field_id( 'show_post_count' ); ?>" name="<?php echo $this->get_field_name( 'show_post_count' ); ?>" /> <?php _e( 'Show post count?', 'hybrid-core' ); ?> <code>show_post_count</code></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['show_post_count'], true ); ?> id="<?php echo $this->get_field_id( 'show_post_count' ); ?>" name="<?php echo $this->get_field_name( 'show_post_count' ); ?>" /> <?php _e( 'Show post count?', 'supreme' ); ?> <code>show_post_count</code></label>
 		</p>
 		</div>
 		<div style="clear:both;">&nbsp;</div>

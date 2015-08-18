@@ -60,7 +60,7 @@ function hybrid_customize_register( $wp_customize ) {
 		$wp_customize->add_section(
 			'hybrid-core-footer',
 			array(
-				'title' => 		esc_html__( 'Footer', 'hybrid-core' ),
+				'title' => 		esc_html__( 'Footer', 'supreme' ),
 				'priority' => 	200,
 				'capability' => 	'edit_theme_options'
 			)
@@ -85,7 +85,7 @@ function hybrid_customize_register( $wp_customize ) {
 				$wp_customize,
 				'hybrid-core-footer',
 				array(
-					'label' => 	esc_html__( 'Footer', 'hybrid-core' ),
+					'label' => 	esc_html__( 'Footer', 'supreme' ),
 					'section' => 	'hybrid-core-footer',
 					'settings' => 	"{$prefix}_theme_settings[footer_insert]",
 				)

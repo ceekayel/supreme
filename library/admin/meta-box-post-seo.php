@@ -34,7 +34,7 @@ function hybrid_meta_box_post_add_seo( $post_type, $post ) {
 
 	/* Only add meta box if current user can edit, add, or delete meta for the post. */
 	if ( ( true === $post_type_object->public ) && ( current_user_can( 'edit_post_meta', $post->ID ) || current_user_can( 'add_post_meta', $post->ID ) || current_user_can( 'delete_post_meta', $post->ID ) ) )
-		add_meta_box( 'hybrid-core-post-seo', __( 'SEO', 'hybrid-core' ), 'hybrid_meta_box_post_display_seo', $post_type, 'normal', 'high' );
+		add_meta_box( 'hybrid-core-post-seo', __( 'SEO', 'supreme' ), 'hybrid_meta_box_post_display_seo', $post_type, 'normal', 'high' );
 }
 
 /**
@@ -67,19 +67,19 @@ function hybrid_meta_box_post_display_seo( $object, $box ) {
 	wp_nonce_field( basename( __FILE__ ), 'hybrid-core-post-seo' ); ?>
 
 	<p>
-		<label for="hybrid-document-title"><?php _e( 'Document Title:', 'hybrid-core' ); ?></label>
+		<label for="hybrid-document-title"><?php _e( 'Document Title:', 'supreme' ); ?></label>
 		<br />
 		<input type="text" name="hybrid-document-title" id="hybrid-document-title" value="<?php echo esc_attr( get_post_meta( $object->ID, 'Title', true ) ); ?>" size="30" tabindex="30" style="width: 99%;" />
 	</p>
 
 	<p>
-		<label for="hybrid-meta-description"><?php _e( 'Meta Description:', 'hybrid-core' ); ?></label>
+		<label for="hybrid-meta-description"><?php _e( 'Meta Description:', 'supreme' ); ?></label>
 		<br />
 		<textarea name="hybrid-meta-description" id="hybrid-meta-description" cols="60" rows="2" tabindex="30" style="width: 99%;"><?php echo esc_textarea( get_post_meta( $object->ID, 'Description', true ) ); ?></textarea>
 	</p>
 
 	<p>
-		<label for="hybrid-meta-keywords"><?php _e( 'Meta Keywords:', 'hybrid-core' ); ?></label>
+		<label for="hybrid-meta-keywords"><?php _e( 'Meta Keywords:', 'supreme' ); ?></label>
 		<br />
 		<input type="text" name="hybrid-meta-keywords" id="hybrid-meta-keywords" value="<?php echo esc_attr( get_post_meta( $object->ID, 'Keywords', true ) ); ?>" size="30" tabindex="30" style="width: 99%;" />
 	</p>

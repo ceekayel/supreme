@@ -83,7 +83,7 @@ function custom_field_series( $args = array() ) {
 
 			/* Create the opening wrapper div, title, and list element. */
 			$series = '<div class="series series-' . esc_attr( $class ) . '">';
-			$series .= '<h4 class="series-title">' . apply_filters( 'custom_field_series_title', __( 'Articles in this series', 'custom-field-series' ) ) . '</h4>';
+			$series .= '<h4 class="series-title">' . apply_filters( 'custom_field_series_title', __( 'Articles in this series', 'supreme' ) ) . '</h4>';
 			$series .= '<ul>';
 
 			/* Loop through the posts. */
@@ -209,7 +209,7 @@ function custom_field_series_load_meta_boxes() {
 function custom_field_series_create_meta_box( $post_type, $post ) {
 
 	if ( post_type_supports( $post_type, 'custom-field-series' ) )
-		add_meta_box( 'custom-field-series', __( 'Series', 'custom-field-series' ), 'custom_field_series_meta_box', $post_type, 'side', 'default' );
+		add_meta_box( 'custom-field-series', __( 'Series', 'supreme' ), 'custom_field_series_meta_box', $post_type, 'side', 'default' );
 }
 
 /**

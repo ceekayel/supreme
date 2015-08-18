@@ -77,7 +77,7 @@ function hybrid_meta_box_post_display_template( $object, $box ) {
 				<?php } ?>
 			</select>
 		<?php } else { ?>
-			<?php _e( 'No templates exist for this post type.', 'hybrid-core' ); ?>
+			<?php _e( 'No templates exist for this post type.', 'supreme' ); ?>
 		<?php } ?>
 	</p>
 <?php

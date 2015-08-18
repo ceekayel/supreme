@@ -17,7 +17,7 @@
 
 			<div id="bbp-author-subscriptions" class="bbp-author-subscriptions">
 
-				<h2 class="entry-title"><?php _e( 'Subscribed Forum Topics', 'bbpress' ); ?></h2>
+				<h2 class="entry-title"><?php _e( 'Subscribed Forum Topics', 'supreme' ); ?></h2>
 
 
 				<?php if ( bbp_get_user_subscriptions() ) :
@@ -28,7 +28,7 @@
 
 				else : ?>
 
-					<div class="bbp-template-notice"><?php bbp_is_user_home() ? _e( 'You are not currently subscribed to any topics.', 'bbpress' ) : _e( 'This user is not currently subscribed to any topics.', 'bbpress' ); ?></div>
+					<div class="bbp-template-notice"><?php bbp_is_user_home() ? _e( 'You are not currently subscribed to any topics.', 'supreme' ) : _e( 'This user is not currently subscribed to any topics.', 'supreme' ); ?></div>
 
 				<?php endif; ?>
 

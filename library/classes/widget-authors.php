@@ -29,7 +29,7 @@ class Hybrid_Widget_Authors extends WP_Widget {
 		/* Set up the widget options. */
 		$widget_options = array(
 			'classname' => 'authors',
-			'description' => esc_html__( 'An advanced widget that gives you total control over the output of your author lists.', 'hybrid-core' )
+			'description' => esc_html__( 'An advanced widget that gives you total control over the output of your author lists.', 'supreme' )
 		);
 
 		/* Set up the widget control options. */
@@ -41,7 +41,7 @@ class Hybrid_Widget_Authors extends WP_Widget {
 		/* Create the widget. */
 		$this->WP_Widget(
 			'hybrid-authors',			// $this->id_base
-			__( 'Authors', 'hybrid-core' ),	// $this->name
+			__( 'Authors', 'supreme' ),	// $this->name
 			$widget_options,			// $this->widget_options
 			$control_options			// $this->control_options
 		);
@@ -116,7 +116,7 @@ class Hybrid_Widget_Authors extends WP_Widget {
 
 		/* Set up the default form values. */
 		$defaults = array(
-			'title' => esc_attr__( 'Authors', 'hybrid-core' ),
+			'title' => esc_attr__( 'Authors', 'supreme' ),
 			'order' => 'ASC',
 			'orderby' => 'display_name',
 			'number' => '',
@@ -133,14 +133,14 @@ class Hybrid_Widget_Authors extends WP_Widget {
 		/* Merge the user-selected arguments with the defaults. */
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
-		$order = array( 'ASC' => esc_attr__( 'Ascending', 'hybrid-core' ), 'DESC' => esc_attr__( 'Descending', 'hybrid-core' ) );
-		$orderby = array( 'display_name' => esc_attr__( 'Display Name', 'hybrid-core' ), 'email' => esc_attr__( 'Email', 'hybrid-core' ), 'ID' => esc_attr__( 'ID', 'hybrid-core' ), 'nicename' => esc_attr__( 'Nice Name', 'hybrid-core' ), 'post_count' => esc_attr__( 'Post Count', 'hybrid-core' ), 'registered' => esc_attr__( 'Registered', 'hybrid-core' ), 'url' => esc_attr__( 'URL', 'hybrid-core' ), 'user_login' => esc_attr__( 'Login', 'hybrid-core' ) );
+		$order = array( 'ASC' => esc_attr__( 'Ascending', 'supreme' ), 'DESC' => esc_attr__( 'Descending', 'supreme' ) );
+		$orderby = array( 'display_name' => esc_attr__( 'Display Name', 'supreme' ), 'email' => esc_attr__( 'Email', 'supreme' ), 'ID' => esc_attr__( 'ID', 'supreme' ), 'nicename' => esc_attr__( 'Nice Name', 'supreme' ), 'post_count' => esc_attr__( 'Post Count', 'supreme' ), 'registered' => esc_attr__( 'Registered', 'supreme' ), 'url' => esc_attr__( 'URL', 'supreme' ), 'user_login' => esc_attr__( 'Login', 'supreme' ) );
 
 		?>
 
 		<div class="hybrid-widget-controls columns-2">
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'hybrid-core' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'supreme' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		<p>
@@ -166,7 +166,7 @@ class Hybrid_Widget_Authors extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'style' ); ?>"><code>style</code></label> 
 			<select class="widefat" id="<?php echo $this->get_field_id( 'style' ); ?>" name="<?php echo $this->get_field_name( 'style' ); ?>">
-				<?php foreach ( array( 'list' => esc_attr__( 'List', 'hybrid-core'), 'none' => esc_attr__( 'None', 'hybrid-core' ) ) as $option_value => $option_label ) { ?>
+				<?php foreach ( array( 'list' => esc_attr__( 'List', 'supreme'), 'none' => esc_attr__( 'None', 'supreme' ) ) as $option_value => $option_label ) { ?>
 					<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['style'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
 				<?php } ?>
 			</select>
@@ -184,23 +184,23 @@ class Hybrid_Widget_Authors extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'html' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['html'], true ); ?> id="<?php echo $this->get_field_id( 'html' ); ?>" name="<?php echo $this->get_field_name( 'html' ); ?>" /> <?php _e( '<acronym title="Hypertext Markup Language">HTML</acronym>?', 'hybrid-core' ); ?> <code>html</code></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['html'], true ); ?> id="<?php echo $this->get_field_id( 'html' ); ?>" name="<?php echo $this->get_field_name( 'html' ); ?>" /> <?php _e( '<acronym title="Hypertext Markup Language">HTML</acronym>?', 'supreme' ); ?> <code>html</code></label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'optioncount' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['optioncount'], true ); ?> id="<?php echo $this->get_field_id( 'optioncount' ); ?>" name="<?php echo $this->get_field_name( 'optioncount' ); ?>" /> <?php _e( 'Show post count?', 'hybrid-core' ); ?> <code>optioncount</code></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['optioncount'], true ); ?> id="<?php echo $this->get_field_id( 'optioncount' ); ?>" name="<?php echo $this->get_field_name( 'optioncount' ); ?>" /> <?php _e( 'Show post count?', 'supreme' ); ?> <code>optioncount</code></label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'exclude_admin' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['exclude_admin'], true ); ?> id="<?php echo $this->get_field_id( 'exclude_admin' ); ?>" name="<?php echo $this->get_field_name( 'exclude_admin' ); ?>" /> <?php _e( 'Exclude admin?', 'hybrid-core' ); ?> <code>exclude_admin</code></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['exclude_admin'], true ); ?> id="<?php echo $this->get_field_id( 'exclude_admin' ); ?>" name="<?php echo $this->get_field_name( 'exclude_admin' ); ?>" /> <?php _e( 'Exclude admin?', 'supreme' ); ?> <code>exclude_admin</code></label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'show_fullname' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['show_fullname'], true ); ?> id="<?php echo $this->get_field_id( 'show_fullname' ); ?>" name="<?php echo $this->get_field_name( 'show_fullname' ); ?>" /> <?php _e( 'Show full name?', 'hybrid-core' ); ?> <code>show_fullname</code></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['show_fullname'], true ); ?> id="<?php echo $this->get_field_id( 'show_fullname' ); ?>" name="<?php echo $this->get_field_name( 'show_fullname' ); ?>" /> <?php _e( 'Show full name?', 'supreme' ); ?> <code>show_fullname</code></label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'hide_empty' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['hide_empty'], true ); ?> id="<?php echo $this->get_field_id( 'hide_empty' ); ?>" name="<?php echo $this->get_field_name( 'hide_empty' ); ?>" /> <?php _e( 'Hide empty?', 'hybrid-core' ); ?> <code>hide_empty</code></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['hide_empty'], true ); ?> id="<?php echo $this->get_field_id( 'hide_empty' ); ?>" name="<?php echo $this->get_field_name( 'hide_empty' ); ?>" /> <?php _e( 'Hide empty?', 'supreme' ); ?> <code>hide_empty</code></label>
 		</p>
 		</div>
 		<div style="clear:both;">&nbsp;</div>

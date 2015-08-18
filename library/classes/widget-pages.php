@@ -29,7 +29,7 @@ class Hybrid_Widget_Pages extends WP_Widget {
 		/* Set up the widget options. */
 		$widget_options = array(
 			'classname' => 'pages',
-			'description' => esc_html__( 'An advanced widget that gives you total control over the output of your page links.', 'hybrid-core' )
+			'description' => esc_html__( 'An advanced widget that gives you total control over the output of your page links.', 'supreme' )
 		);
 
 		/* Set up the widget control options. */
@@ -41,7 +41,7 @@ class Hybrid_Widget_Pages extends WP_Widget {
 		/* Create the widget. */
 		$this->WP_Widget(
 			'hybrid-pages',			// $this->id_base
-			__( 'Pages', 'hybrid-core'),		// $this->name
+			__( 'Pages', 'supreme'),		// $this->name
 			$widget_options,			// $this->widget_options
 			$control_options			// $this->control_options
 		);
@@ -120,7 +120,7 @@ class Hybrid_Widget_Pages extends WP_Widget {
 
 		/* Set up the default form values. */
 		$defaults = array(
-			'title' => esc_attr__( 'Pages', 'hybrid-core'),
+			'title' => esc_attr__( 'Pages', 'supreme'),
 			'post_type' => 'page',
 			'depth' => 0,
 			'number' => '',
@@ -145,16 +145,16 @@ class Hybrid_Widget_Pages extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
 		$post_types = get_post_types( array( 'public' => true, 'hierarchical' => true ), 'objects' );
-		$sort_order = array( 'ASC' => esc_attr__( 'Ascending', 'hybrid-core' ), 'DESC' => esc_attr__( 'Descending', 'hybrid-core' ) );
-		$sort_column = array( 'post_author' => esc_attr__( 'Author', 'hybrid-core' ), 'post_date' => esc_attr__( 'Date', 'hybrid-core' ), 'ID' => esc_attr__( 'ID', 'hybrid-core' ), 'menu_order' => esc_attr__( 'Menu Order', 'hybrid-core' ), 'post_modified' => esc_attr__( 'Modified', 'hybrid-core' ), 'post_name' => esc_attr__( 'Slug', 'hybrid-core' ), 'post_title' => esc_attr__( 'Title', 'hybrid-core' ) );
-		$show_date = array( '' => '', 'created' => esc_attr__( 'Created', 'hybrid-core' ), 'modified' => esc_attr__( 'Modified', 'hybrid-core' ) );
+		$sort_order = array( 'ASC' => esc_attr__( 'Ascending', 'supreme' ), 'DESC' => esc_attr__( 'Descending', 'supreme' ) );
+		$sort_column = array( 'post_author' => esc_attr__( 'Author', 'supreme' ), 'post_date' => esc_attr__( 'Date', 'supreme' ), 'ID' => esc_attr__( 'ID', 'supreme' ), 'menu_order' => esc_attr__( 'Menu Order', 'supreme' ), 'post_modified' => esc_attr__( 'Modified', 'supreme' ), 'post_name' => esc_attr__( 'Slug', 'supreme' ), 'post_title' => esc_attr__( 'Title', 'supreme' ) );
+		$show_date = array( '' => '', 'created' => esc_attr__( 'Created', 'supreme' ), 'modified' => esc_attr__( 'Modified', 'supreme' ) );
 		$meta_key = array_merge( array( '' ), (array) get_meta_keys() );
 
 		?>
 
 		<div class="hybrid-widget-controls columns-3">
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'hybrid-core' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'supreme' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		<p>
@@ -253,7 +253,7 @@ class Hybrid_Widget_Pages extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'hierarchical' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['hierarchical'], true ); ?> id="<?php echo $this->get_field_id( 'hierarchical' ); ?>" name="<?php echo $this->get_field_name( 'hierarchical' ); ?>" /> <?php _e( 'Hierarchical?', 'hybrid-core'); ?> <code>hierarchical</code></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['hierarchical'], true ); ?> id="<?php echo $this->get_field_id( 'hierarchical' ); ?>" name="<?php echo $this->get_field_name( 'hierarchical' ); ?>" /> <?php _e( 'Hierarchical?', 'supreme'); ?> <code>hierarchical</code></label>
 		</p>
 		</div>
 		<div style="clear:both;">&nbsp;</div>

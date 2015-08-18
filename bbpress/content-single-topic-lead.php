@@ -11,7 +11,7 @@
 
 <div class="byline">
 
-	<span class="bbp-topic-date"><?php printf( __( '%1$s at %2$s', 'bbpress' ), get_the_date(), esc_attr( get_the_time() ) ); ?></span>
+	<span class="bbp-topic-date"><?php printf( __( '%1$s at %2$s', 'supreme' ), get_the_date(), esc_attr( get_the_time() ) ); ?></span>
 	
 	<a href="<?php echo bbp_get_topic_author_url(); ?>" class="bbp-author-name"><?php bbp_topic_author(); ?></a>
 
@@ -39,7 +39,7 @@
 
 	<a href="<?php echo bbp_get_topic_author_url(); ?>" title="<?php the_author_meta('display_name'); ?>" class="avatar-frame"><?php echo get_avatar(get_the_author_meta('ID'), '50', '', ''); ?></a>
 
-	<p class="author-name"><?php _e( 'Started by:', 'fanwood'); ?> <a href="<?php echo bbp_get_topic_author_url(); ?>"><?php bbp_topic_author(); ?></a></p>
+	<p class="author-name"><?php _e( 'Started by:', 'supreme'); ?> <a href="<?php echo bbp_get_topic_author_url(); ?>"><?php bbp_topic_author(); ?></a></p>
 	<p class="author-description"><?php the_author_meta('description'); ?></p>
 
 </div><!-- .entry-author -->

@@ -47,14 +47,14 @@
 
 		echo '<div class="hreview-aggregate">';
 
-		echo '<div class="star-rating" title="'.sprintf(__('Rated %s out of 5', 'jigoshop'),$average).'"><span style="width:'.($average*16).'px"><span class="rating">'.$average.'</span> '.__('out of 5', 'jigoshop').'</span></div>';
+		echo '<div class="star-rating" title="'.sprintf(__('Rated %s out of 5', 'supreme'),$average).'"><span style="width:'.($average*16).'px"><span class="rating">'.$average.'</span> '.__('out of 5', 'supreme').'</span></div>';
 
-		echo '<h2>'.sprintf( _n('%s Review', '%s reviews', $count, 'jigoshop'), '<span class="count">'.$count.'</span>' ).'</h2>';
+		echo '<h2>'.sprintf( _n('%s Review', '%s reviews', $count, 'supreme'), '<span class="count">'.$count.'</span>' ).'</h2>';
 
 		echo '</div>';
 
 	else :
-		echo '<h2>'.__('Reviews', 'jigoshop').'</h2>';
+		echo '<h2>'.__('Reviews', 'supreme').'</h2>';
 	endif;
 
 	$title_reply = '';
@@ -73,15 +73,15 @@
 			</div>
 		<?php endif;
 
-		echo '<p class="add_review"><a href="#review_form" class="inline show_review_form button">'.__('Add Review', 'jigoshop').'</a></p>';
+		echo '<p class="add_review"><a href="#review_form" class="inline show_review_form button">'.__('Add Review', 'supreme').'</a></p>';
 
-		$title_reply = __('Add a review', 'jigoshop');
+		$title_reply = __('Add a review', 'supreme');
 
 	else :
 
-		$title_reply = __('Be the first to review ', 'jigoshop').'&ldquo;'.$post->post_title.'&rdquo;';
+		$title_reply = __('Be the first to review ', 'supreme').'&ldquo;'.$post->post_title.'&rdquo;';
 
-		echo '<p>'.__('There are no reviews yet, would you like to <a href="#review_form" class="inline show_review_form">submit yours</a>?', 'jigoshop').'</p>';
+		echo '<p>'.__('There are no reviews yet, would you like to <a href="#review_form" class="inline show_review_form">submit yours</a>?', 'supreme').'</p>';
 
 	endif;
 
@@ -94,23 +94,23 @@
 		'comment_notes_before' => '',
 		'comment_notes_after' => '',
 		'fields' => array(
-			'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'jigoshop' ) . '</label> ' . '<span class="required">*</span>' .
+			'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'supreme' ) . '</label> ' . '<span class="required">*</span>' .
 			            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" /></p>',
-			'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'jigoshop' ) . '</label> ' . '<span class="required">*</span>' .
+			'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'supreme' ) . '</label> ' . '<span class="required">*</span>' .
 			            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-required="true" /></p>',
 		),
-		'label_submit' => __('Submit Review', 'jigoshop'),
+		'label_submit' => __('Submit Review', 'supreme'),
 		'logged_in_as' => '',
 		'comment_field' => '
-			<p class="comment-form-rating"><label for="rating">' . __('Rating', 'jigoshop') .'</label><select name="rating" id="rating">
-				<option value="">'.__('Rate...','jigoshop').'</option>
-				<option value="5">'.__('Perfect','jigoshop').'</option>
-				<option value="4">'.__('Good','jigoshop').'</option>
-				<option value="3">'.__('Average','jigoshop').'</option>
-				<option value="2">'.__('Not that bad','jigoshop').'</option>
-				<option value="1">'.__('Very Poor','jigoshop').'</option>
+			<p class="comment-form-rating"><label for="rating">' . __('Rating', 'supreme') .'</label><select name="rating" id="rating">
+				<option value="">'.__('Rate...','supreme').'</option>
+				<option value="5">'.__('Perfect','supreme').'</option>
+				<option value="4">'.__('Good','supreme').'</option>
+				<option value="3">'.__('Average','supreme').'</option>
+				<option value="2">'.__('Not that bad','supreme').'</option>
+				<option value="1">'.__('Very Poor','supreme').'</option>
 			</select></p>
-			<p class="comment-form-comment"><label for="comment">' . _x( 'Your Review', 'noun', 'jigoshop' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'
+			<p class="comment-form-comment"><label for="comment">' . _x( 'Your Review', 'noun', 'supreme' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'
 			. jigoshop::nonce_field('comment_rating', true, false)
 	));
 
@@ -154,7 +154,7 @@
 			var $rating = jQuery(this).closest('#respond').find('#rating');
 			var rating  = $rating.val();
 			if ( $rating.size() > 0 && ! rating ) {
-				alert("<?php _e('Please select a star to rate your review.','jigoshop'); ?>");
+				alert("<?php _e('Please select a star to rate your review.','supreme'); ?>");
 				return false;
 			}
 		});

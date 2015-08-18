@@ -19,14 +19,14 @@
 
 				<div class="bbp-form">
 				
-					<h3><?php printf( __( 'Reply To: %s', 'bbpress' ), bbp_get_topic_title() ); ?></h3>
+					<h3><?php printf( __( 'Reply To: %s', 'supreme' ), bbp_get_topic_title() ); ?></h3>
 
 					<?php do_action( 'bbp_theme_before_reply_form_notices' ); ?>
 
 					<?php if ( !bbp_is_topic_open() && !bbp_is_reply_edit() ) : ?>
 
 						<div class="bbp-template-notice">
-							<p><?php _e( 'This topic is marked as closed to new replies, however your posting capabilities still allow you to do so.', 'bbpress' ); ?></p>
+							<p><?php _e( 'This topic is marked as closed to new replies, however your posting capabilities still allow you to do so.', 'supreme' ); ?></p>
 						</div>
 
 					<?php endif; ?>
@@ -34,7 +34,7 @@
 					<?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
 
 						<div class="bbp-template-notice">
-							<p><?php _e( 'Your account has the ability to post unrestricted HTML content.', 'bbpress' ); ?></p>
+							<p><?php _e( 'Your account has the ability to post unrestricted HTML content.', 'supreme' ); ?></p>
 						</div>
 
 					<?php endif; ?>
@@ -48,7 +48,7 @@
 					<?php if ( !function_exists( 'wp_editor' ) ) : ?>
 
 						<p>
-							<label for="bbp_reply_content"><?php _e( 'Reply:', 'bbpress' ); ?></label><br />
+							<label for="bbp_reply_content"><?php _e( 'Reply:', 'supreme' ); ?></label><br />
 							<textarea id="bbp_reply_content" tabindex="<?php bbp_tab_index(); ?>" name="bbp_reply_content" rows="6"><?php bbp_form_reply_content(); ?></textarea>
 						</p>
 
@@ -63,7 +63,7 @@
 					<?php if ( !current_user_can( 'unfiltered_html' ) ) : ?>
 
 						<p class="form-allowed-tags">
-							<label><?php _e( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:','bbpress' ); ?></label><br />
+							<label><?php _e( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:','supreme' ); ?></label><br />
 							<code><?php bbp_allowed_tags(); ?></code>
 						</p>
 
@@ -72,7 +72,7 @@
 					<?php do_action( 'bbp_theme_before_reply_form_tags' ); ?>
 
 					<p>
-						<label for="bbp_topic_tags"><?php _e( 'Tags:', 'bbpress' ); ?></label><br />
+						<label for="bbp_topic_tags"><?php _e( 'Tags:', 'supreme' ); ?></label><br />
 						<input type="text" value="<?php bbp_form_topic_tags(); ?>" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_tags" id="bbp_topic_tags" <?php disabled( bbp_is_topic_spam() ); ?> />
 					</p>
 
@@ -88,11 +88,11 @@
 
 							<?php if ( bbp_is_reply_edit() && $post->post_author != bbp_get_current_user_id() ) : ?>
 
-							<label for="bbp_topic_subscription"><?php _e( 'Notify the author for follow-up replies via email', 'bbpress' ); ?></label>
+							<label for="bbp_topic_subscription"><?php _e( 'Notify the author for follow-up replies via email', 'supreme' ); ?></label>
 
 							<?php else : ?>
 
-							<label for="bbp_topic_subscription"><?php _e( 'Notify me for follow-up replies via email', 'bbpress' ); ?></label>
+							<label for="bbp_topic_subscription"><?php _e( 'Notify me for follow-up replies via email', 'supreme' ); ?></label>
 
 							<?php endif; ?>
 
@@ -106,14 +106,14 @@
 
 						<?php do_action( 'bbp_theme_before_reply_form_revisions' ); ?>
 
-						<h3><?php _e( 'Revision', 'bbpress' ); ?></h3>
+						<h3><?php _e( 'Revision', 'supreme' ); ?></h3>
 						
 						<p>
-							<input name="bbp_log_reply_edit" id="bbp_log_reply_edit" type="checkbox" value="1" <?php bbp_form_reply_log_edit(); ?> tabindex="<?php bbp_tab_index(); ?>" /> <label for="bbp_log_reply_edit"><?php _e( 'Keep a log of this edit:', 'bbpress' ); ?></label><br />
+							<input name="bbp_log_reply_edit" id="bbp_log_reply_edit" type="checkbox" value="1" <?php bbp_form_reply_log_edit(); ?> tabindex="<?php bbp_tab_index(); ?>" /> <label for="bbp_log_reply_edit"><?php _e( 'Keep a log of this edit:', 'supreme' ); ?></label><br />
 						</p>
 
 						<p>
-							<label for="bbp_reply_edit_reason"><?php printf( __( 'Optional reason for editing:', 'bbpress' ), bbp_get_current_user_name() ); ?></label><br />
+							<label for="bbp_reply_edit_reason"><?php printf( __( 'Optional reason for editing:', 'supreme' ), bbp_get_current_user_name() ); ?></label><br />
 							<input type="text" value="<?php bbp_form_reply_edit_reason(); ?>" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_reply_edit_reason" id="bbp_reply_edit_reason" />
 						</p>
 
@@ -131,7 +131,7 @@
 
 						<?php do_action( 'bbp_theme_before_reply_form_submit_button' ); ?>
 
-						<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_reply_submit" name="bbp_reply_submit" class="button submit"><?php _e( 'Submit', 'bbpress' ); ?></button>
+						<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_reply_submit" name="bbp_reply_submit" class="button submit"><?php _e( 'Submit', 'supreme' ); ?></button>
 
 						<?php do_action( 'bbp_theme_after_reply_form_submit_button' ); ?>
 
@@ -153,7 +153,7 @@
 
 		<div id="no-reply-<?php bbp_topic_id(); ?>" class="bbp-no-reply">
 			<div class="bbp-template-notice">
-				<p><?php printf( __( 'The topic &#8216;%s&#8217; is closed to new replies.', 'bbpress' ), bbp_get_topic_title() ); ?></p>
+				<p><?php printf( __( 'The topic &#8216;%s&#8217; is closed to new replies.', 'supreme' ), bbp_get_topic_title() ); ?></p>
 			</div>
 		</div>
 
@@ -161,7 +161,7 @@
 
 		<div id="no-reply-<?php bbp_topic_id(); ?>" class="bbp-no-reply">
 			<div class="bbp-template-notice">
-				<p><?php printf( __( 'The forum &#8216;%s&#8217; is closed to new topics and replies.', 'bbpress' ), bbp_get_forum_title( bbp_get_topic_forum_id() ) ); ?></p>
+				<p><?php printf( __( 'The forum &#8216;%s&#8217; is closed to new topics and replies.', 'supreme' ), bbp_get_forum_title( bbp_get_topic_forum_id() ) ); ?></p>
 			</div>
 		</div>
 
@@ -169,7 +169,7 @@
 
 		<div id="no-reply-<?php bbp_topic_id(); ?>" class="bbp-no-reply">
 			<div class="bbp-template-notice">
-				<p><?php is_user_logged_in() ? _e( 'You cannot reply to this topic.', 'bbpress' ) : _e( 'You must be logged in to reply to this topic.', 'bbpress' ); ?></p>
+				<p><?php is_user_logged_in() ? _e( 'You cannot reply to this topic.', 'supreme' ) : _e( 'You must be logged in to reply to this topic.', 'supreme' ); ?></p>
 			</div>
 		</div>
 

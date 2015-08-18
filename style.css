@@ -2,7 +2,7 @@
  * Theme Name: Supreme
  * Theme URI: http://templatic.com/ecommerce-themes/supreme/
  * Description: A powerful parent theme with bbPress, Jigoshop, and WooCommerce integrations.
- * Version: 1.0.13
+ * Version: 1.1.4
  * Author: Templatic
  * Author URI: http://templatic.com
  * Tags: theme-options, threaded-comments, microformats, translation-ready, rtl-language-support, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, featured-images, full-width-template
@@ -410,10 +410,9 @@ form {
 
 	label{
 		cursor: pointer;
-		display: inline-block;
 		margin: 0 0 5px;
 		padding: 0;
-		}
+	}
 
 	input[type="checkbox"],
 	input[type="radio"]{

@@ -173,50 +173,50 @@ function hybrid_unregister_widgets() {
 			$this->options = array(
 				array(
 					'name'	=> 'title',
-					'label'	=> __( 'Title', DOMAIN ),
+					'label'	=> __( 'Title', 'supreme' ),
 					'type'	=> 'text'
 				),			
 				array(
 					'name'	=> 'twitter_username',
-					'label'	=> __( 'Twitter Username', DOMAIN ),
+					'label'	=> __( 'Twitter Username', 'supreme' ),
 					'type'	=> 'text'
 				),
 				array(
 					'name'	=> 'consumer_key',
-					'label'	=> __( 'Consumer Key', DOMAIN ),
+					'label'	=> __( 'Consumer Key', 'supreme' ),
 					'type'	=> 'text'
 				),
 				array(
 					'name'	=> 'consumer_secret',
-					'label'	=> __( 'Consumer Secret', DOMAIN ),
+					'label'	=> __( 'Consumer Secret', 'supreme' ),
 					'type'	=> 'text'
 				),
 				array(
 					'name'	=> 'access_token',
-					'label'	=> __( 'Access Token', DOMAIN ),
+					'label'	=> __( 'Access Token', 'supreme' ),
 					'type'	=> 'text'
 				),
 				array(
 					'name'	=> 'access_token_secret',
-					'label'	=> __( 'Access Token Secret', DOMAIN ),
+					'label'	=> __( 'Access Token Secret', 'supreme' ),
 					'type'	=> 'text'
 				),
 				array(
 					'name'	=> 'twitter_number',
-					'label'	=> __( 'Number Of Tweets', DOMAIN ),
+					'label'	=> __( 'Number Of Tweets', 'supreme' ),
 					'type'	=> 'text'
 				),
 				array(
 					'name'	=> 'follow_text',
-					'label'	=> __( 'Twitter button text <small>(for eg. Follow us, Join me on Twitter, etc.)</small>', DOMAIN ),
+					'label'	=> __( 'Twitter button text <small>(for eg. Follow us, Join me on Twitter, etc.)</small>', 'supreme' ),
 					'type'	=> 'text'
 				),			
 			);
 			$widget_options = array(
 				'classname'		=>	'widget Templatic twitter',
-				'description'	=>	__('Show your latest tweets on your site.','templatic')
+				'description'	=>	__('Show your latest tweets on your site.','supreme')
 			);
-			$this->WP_Widget(false, __('T &rarr; Latest Twitter Feeds','templatic'), $widget_options);
+			$this->WP_Widget(false, __('T &rarr; Latest Twitter Feeds','supreme'), $widget_options);
 		}
 		
 		function widget($args, $instance){
@@ -236,7 +236,7 @@ function hybrid_unregister_widgets() {
 				echo '<h3 class="widget-title">' . $title . '</h3>';
 			}
 			if (!is_curl_installed()) {
-				_e("cURL is NOT installed on this server",DOMAIN);
+				_e("cURL is NOT installed on this server",'supreme');
 			}else{
 			if ($twitter_username != '') {
 				templatic_twitter_messages($instance);
@@ -260,14 +260,14 @@ function hybrid_unregister_widgets() {
 		}
 		function form($instance){
 			if (empty($instance)) {
-				$instance['title']					= __( 'Latest Tweets', DOMAIN );			
+				$instance['title']					= __( 'Latest Tweets', 'supreme' );			
 				$instance['twitter_username']		= 'templatic';
 				$instance['consumer_key']			= '';
 				$instance['consumer_secret']		= '';
 				$instance['access_token']			= '';
 				$instance['access_token_secret']	= '';
 				$instance['twitter_number']			= '3';			
-				$instance['follow_text']			= __('Follow Us','templatic');
+				$instance['follow_text']			= __('Follow Us','supreme');
 			}
 			echo '<p><span style="font-size:11px">To use this widget, <a href="https://dev.twitter.com/apps/new" style="text-decoration:none;" target="_blank">create</a> an application or <a href="https://dev.twitter.com/apps" target="_blank" style="text-decoration:none;" >click here</a> if you already have it, and fill required fields below. Need help? Read <a href="http://templatic.com/docs/latest-changes-in-twitter-widget-for-all-templatic-themes/" title="Tweeter Widget Guide" target="_blank" style="text-decoration:none;" >Tweeter Guide</a>.</small></p>';
 			foreach ($this->options as $val) {
@@ -334,11 +334,11 @@ function templatic_twitter_messages($options){
 	$tweets = $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=".$twitter_username."&count=".$twitter_number);
 	$tweet_errors = (array) $tweets->errors;
 	if (empty($tweets)) {
-	    _e('No public tweets','templatic');
+	    _e('No public tweets','supreme');
 	}elseif(!empty($tweet_errors)){
 		$twitter_error = $tweet_errors;
 		$debug = '<br />Error:('.$twitter_error[0]->code.')<br/> '.$twitter_error[0]->message;
-		_e('Unable to get tweets'.$debug,'templatic');
+		_e('Unable to get tweets'.$debug,'supreme');
 	}else{
 		echo '<ul id="twitter_update_list" class="templatic_twitter_widget">';
 		foreach ($tweets  as $tweet) {
@@ -503,8 +503,8 @@ class templatic_slider extends WP_Widget {
 			<?php if($s1[$i]!=""):
 								   
 								    if(function_exists('icl_register_string')){
-										icl_register_string(THEME_DOMAIN,'custom_content_title'.$s1_title[$i].$i,$s1_title[$i]);
-										$s1_title[$i] = icl_t(THEME_DOMAIN,'custom_content_title'.$s1_title[$i].$i,$s1_title[$i]);	
+										icl_register_string('supreme','custom_content_title'.$s1_title[$i].$i,$s1_title[$i]);
+										$s1_title[$i] = icl_t('supreme','custom_content_title'.$s1_title[$i].$i,$s1_title[$i]);	
 									}
 
 									?>
@@ -540,7 +540,7 @@ class templatic_slider extends WP_Widget {
 							$taxonomies = get_object_taxonomies( (object) array( 'post_type' => $post_type,'public'   => true, '_builtin' => true ));							
 							if($post_type=='product')
 							{
-								$taxonomies[0]=$taxonomies[1];	
+								$taxonomies[0]='product_cat';	
 							}
 							$term = get_term( $catid, $taxonomies[0] );							
 							$cat_id[]=$term->term_id;
@@ -878,7 +878,7 @@ class templatic_slider extends WP_Widget {
 	<label for="<?php echo $this->get_field_id('is_Carousel'); ?>">
 		<input id="<?php echo $this->get_field_id('is_Carousel'); ?>" name="<?php echo $this->get_field_name('is_Carousel'); ?>" type="checkbox" value="1" <?php if($is_Carousel =='1'){ ?>checked=checked<?php } 
 ?>style="width:10px;" onclick="select_is_Carousel(this,'<?php echo $this->get_field_id('home_slide_carousel'); ?>');"/>
-		<?php _e('<b>Settings for Carousel slider option?</b>','templatic');?><br/>
+		<?php _e('<b>Settings for Carousel slider option?</b>','supreme');?><br/>
           <small><?php _e('If you want to use carousel slider option then you must select the animation option as slide and sliding direction as horizontal.','supreme');?></small>
           
 	</label>

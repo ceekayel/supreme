@@ -15,7 +15,7 @@ if(!class_exists('templatic_google_map'))
 		
 			$widget_options = array(
 				'classname' => 'googlemap',
-				'description' => esc_html__( 'Display a map of a specific location, Use in: Footer areas, Homepage Content area, Primary, Subsidiary, Subsidiary 2 columns, Contact Page widget area', 'templatic' )
+				'description' => esc_html__( 'Display a map of a specific location, Use in: Footer areas, Homepage Content area, Primary, Subsidiary, Subsidiary 2 columns, Contact Page widget area', 'supreme' )
 			);
 
 			/* Set up the widget control options. */
@@ -27,7 +27,7 @@ if(!class_exists('templatic_google_map'))
 			/* Create the widget. */
 			$this->WP_Widget(
 				'templatic_google_map',		// $this->id_base
-				__( 'T &rarr; Google Map Widget', 'templatic' ),	// $this->name
+				__( 'T &rarr; Google Map Widget', 'supreme' ),	// $this->name
 				$widget_options,			// $this->widget_options
 				$control_options			// $this->control_options
 			);

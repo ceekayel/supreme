@@ -420,44 +420,44 @@ function hybrid_document_title() {
 		/* If viewing a date-/time-based archive. */
 		elseif ( is_date () ) {
 			if ( get_query_var( 'minute' ) && get_query_var( 'hour' ) )
-				$doctitle = sprintf( __( 'Archive for %1$s', 'hybrid-core' ), get_the_time( __( 'g:i a', 'hybrid-core' ) ) );
+				$doctitle = sprintf( __( 'Archive for %1$s', 'supreme' ), get_the_time( __( 'g:i a', 'supreme' ) ) );
 
 			elseif ( get_query_var( 'minute' ) )
-				$doctitle = sprintf( __( 'Archive for minute %1$s', 'hybrid-core' ), get_the_time( __( 'i', 'hybrid-core' ) ) );
+				$doctitle = sprintf( __( 'Archive for minute %1$s', 'supreme' ), get_the_time( __( 'i', 'supreme' ) ) );
 
 			elseif ( get_query_var( 'hour' ) )
-				$doctitle = sprintf( __( 'Archive for %1$s', 'hybrid-core' ), get_the_time( __( 'g a', 'hybrid-core' ) ) );
+				$doctitle = sprintf( __( 'Archive for %1$s', 'supreme' ), get_the_time( __( 'g a', 'supreme' ) ) );
 
 			elseif ( is_day() )
-				$doctitle = sprintf( __( 'Archive for %1$s', 'hybrid-core' ), get_the_time( __( 'F jS, Y', 'hybrid-core' ) ) );
+				$doctitle = sprintf( __( 'Archive for %1$s', 'supreme' ), get_the_time( __( 'F jS, Y', 'supreme' ) ) );
 
 			elseif ( get_query_var( 'w' ) )
-				$doctitle = sprintf( __( 'Archive for week %1$s of %2$s', 'hybrid-core' ), get_the_time( __( 'W', 'hybrid-core' ) ), get_the_time( __( 'Y', 'hybrid-core' ) ) );
+				$doctitle = sprintf( __( 'Archive for week %1$s of %2$s', 'supreme' ), get_the_time( __( 'W', 'supreme' ) ), get_the_time( __( 'Y', 'supreme' ) ) );
 
 			elseif ( is_month() )
-				$doctitle = sprintf( __( 'Archive for %1$s', 'hybrid-core' ), single_month_title( ' ', false) );
+				$doctitle = sprintf( __( 'Archive for %1$s', 'supreme' ), single_month_title( ' ', false) );
 
 			elseif ( is_year() )
-				$doctitle = sprintf( __( 'Archive for %1$s', 'hybrid-core' ), get_the_time( __( 'Y', 'hybrid-core' ) ) );
+				$doctitle = sprintf( __( 'Archive for %1$s', 'supreme' ), get_the_time( __( 'Y', 'supreme' ) ) );
 		}
 
 		/* For any other archives. */
 		else {
-			$doctitle = __( 'Archives', 'hybrid-core' );
+			$doctitle = __( 'Archives', 'supreme' );
 		}
 	}
 
 	/* If viewing a search results page. */
 	elseif ( is_search() )
-		$doctitle = sprintf( __( 'Search results for &quot;%1$s&quot;', 'hybrid-core' ), esc_attr( get_search_query() ) );
+		$doctitle = sprintf( __( 'Search results for &quot;%1$s&quot;', 'supreme' ), esc_attr( get_search_query() ) );
 
 	/* If viewing a 404 not found page. */
 	elseif ( is_404() )
-		$doctitle = __( '404 Not Found', 'hybrid-core' );
+		$doctitle = __( '404 Not Found', 'supreme' );
 
 	/* If the current page is a paged page. */
 	if ( ( ( $page = $wp_query->get( 'paged' ) ) || ( $page = $wp_query->get( 'page' ) ) ) && $page > 1 )
-		$doctitle = sprintf( __( '%1$s Page %2$s', 'hybrid-core' ), $doctitle . $separator, number_format_i18n( $page ) );
+		$doctitle = sprintf( __( '%1$s Page %2$s', 'supreme' ), $doctitle . $separator, number_format_i18n( $page ) );
 
 	/* Apply the wp_title filters so we're compatible with plugins. */
 	$doctitle = apply_filters( 'wp_title', $doctitle, $separator, '' );

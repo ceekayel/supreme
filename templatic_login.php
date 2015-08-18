@@ -100,7 +100,7 @@
 			  
 			  <p><?php _e('you can update to the latest version automatically , or download the latest version of the theme.','supreme'); ?></p>
 			  <p><span style="color:red; font-weight:bold;"><?php _e('Warning','supreme'); ?>: </span><?php _e('Updating will undo all your file customizations so make sure to keep backup of all files before updating.','supreme'); ?></p>
-			  <a target="_blank" class="button-secondary" href="http://templatic.com/members/member"><?php _e('Download latest Version','templatic'); ?></a> 
+			  <a target="_blank" class="button-secondary" href="http://templatic.com/members/member"><?php _e('Download latest Version','supreme'); ?></a> 
 			  
 			  </div>
 		<?php } ?>
@@ -147,8 +147,8 @@
 <?php
 
 if($flag == 0){
-	echo '<h3>'.__('You have the latest version of supreme parent theme.',DOMAIN).'</h3>';
-    echo '<p>&rarr;'.sprintf(__('<strong>Your version:</strong> %s',DOMAIN),$theme_version).'</p>';	
+	echo '<h3>'.__('You have the latest version of supreme parent theme.','supreme').'</h3>';
+    echo '<p>&rarr;'.sprintf(__('<strong>Your version:</strong> %s','supreme'),$theme_version).'</p>';	
 }
 do_action('admin_footer', '');
 do_action('admin_print_footer_scripts');

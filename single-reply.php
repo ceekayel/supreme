@@ -31,7 +31,7 @@ get_header(); // Loads the header.php template. ?>
 				<h1 class="entry-title"><?php bbp_reply_title(); ?></h1>
 				
 				<div class="byline">
-					<span class="bbp-reply-date"><?php printf( __( '%1$s at %2$s', 'bbpress' ), get_the_date(), esc_attr( get_the_time() ) ); ?></span>
+					<span class="bbp-reply-date"><?php printf( __( '%1$s at %2$s', 'supreme' ), get_the_date(), esc_attr( get_the_time() ) ); ?></span>
 					<?php bbp_reply_author_link( array( 'type' => 'name' ) ); ?>
 					<span class="bbp-reply-permalink"><a href="<?php bbp_reply_url(); ?>" title="<?php bbp_reply_title(); ?>">#</a></span>
 				</div><!-- .byline -->

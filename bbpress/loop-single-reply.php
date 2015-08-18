@@ -23,7 +23,7 @@
 
 					<span class="comment-author vcard"><cite><?php bbp_reply_author_link( array( 'type' => 'name' ) ); ?></cite></span><!-- .comment-author -->
 					
-					<a href="<?php bbp_reply_url(); ?>" title="<?php bbp_reply_title(); ?>"><?php printf( __( '%1$s at %2$s', 'bbpress' ), get_the_date(), esc_attr( get_the_time() ) ); ?></a>
+					<a href="<?php bbp_reply_url(); ?>" title="<?php bbp_reply_title(); ?>"><?php printf( __( '%1$s at %2$s', 'supreme' ), get_the_date(), esc_attr( get_the_time() ) ); ?></a>
 
 					<?php if ( is_super_admin() ) : ?>
 						<?php do_action( 'bbp_theme_before_reply_author_admin_details' ); ?>

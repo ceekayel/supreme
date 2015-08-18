@@ -71,9 +71,6 @@ function supreme_theme_setup() {
 	if(file_exists(get_template_directory().'/functions/templatic_news.php')){
 		require_once(get_template_directory().'/functions/templatic_news.php');
 	}
-	//if(function_exists())
-	@define('DOMAIN','supreme');
-
 	//add_filter( 'woocommerce_enqueue_styles', '__return_false' ); // unable woocommerce css
 	
 	add_action('init','attach_mega_menu_js');
@@ -665,12 +662,12 @@ function supreme_localize_topic_script() {
 		$localizations['favoritesActive'] = 1;
 		$localizations['favoritesLink']   = bbp_get_favorites_permalink( $user_id );
 		$localizations['isFav']           = (int) bbp_is_user_favorite( $user_id );
-		$localizations['favLinkYes']      = __( 'favorites',                                         'bbpress' );
-		$localizations['favLinkNo']       = __( '?',                                                 'bbpress' );
-		$localizations['favYes']          = __( 'This topic is one of your %favLinkYes% [%favDel%]', 'bbpress' );
-		$localizations['favNo']           = __( '%favAdd% (%favLinkNo%)',                            'bbpress' );
-		$localizations['favDel']          = __( '&times;',                                           'bbpress' );
-		$localizations['favAdd']          = __( 'Add this topic to your favorites',                  'bbpress' );
+		$localizations['favLinkYes']      = __( 'favorites',                                         'supreme' );
+		$localizations['favLinkNo']       = __( '?',                                                 'supreme' );
+		$localizations['favYes']          = __( 'This topic is one of your %favLinkYes% [%favDel%]', 'supreme' );
+		$localizations['favNo']           = __( '%favAdd% (%favLinkNo%)',                            'supreme' );
+		$localizations['favDel']          = __( '&times;',                                           'supreme' );
+		$localizations['favAdd']          = __( 'Add this topic to your favorites',                  'supreme' );
 	} else {
 		$localizations['favoritesActive'] = 0;
 	}
@@ -679,8 +676,8 @@ function supreme_localize_topic_script() {
 	if ( bbp_is_subscriptions_active() ) {
 		$localizations['subsActive']   = 1;
 		$localizations['isSubscribed'] = (int) bbp_is_user_subscribed( $user_id );
-		$localizations['subsSub']      = __( 'Subscribe',   'bbpress' );
-		$localizations['subsUns']      = __( 'Unsubscribe', 'bbpress' );
+		$localizations['subsSub']      = __( 'Subscribe',   'supreme' );
+		$localizations['subsUns']      = __( 'Unsubscribe', 'supreme' );
 		$localizations['subsLink']     = bbp_get_topic_permalink();
 	} else {
 		$localizations['subsActive'] = 0;
@@ -893,7 +890,7 @@ function supreme_register_sidebars() {
 	
 	$widgets_template = array(
 		'id' => 'widgets-template',
-		'name' => __( 'Widgets Template', 'sidebar', 'supreme' ),
+		'name' => __( 'Widgets Template', 'supreme', 'supreme' ),
 		'description' => __( 'Used on widgets only page template.', 'supreme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="widget-wrap widget-inside">',
 		'after_widget' => '</div></div>',
@@ -1146,7 +1143,7 @@ Description : Return the categories of post
 if(!function_exists('supreme_get_categories'))
 {
 function supreme_get_categories($label,$taxonomy,$class,$tags_label,$tag_taxonomy){
-	echo apply_atomic_shortcode( 'bottom_line', '<div class="'.$class.'">' .__($label,THEME_DOMAIN). __( '[entry-terms taxonomy="'.$taxonomy.'"] [entry-terms taxonomy="'.$tag_taxonomy.'" before="'.__($tags_label,THEME_DOMAIN)." ".'"]', THEME_DOMAIN ) . '</div>' );
+	echo apply_atomic_shortcode( 'bottom_line', '<div class="'.$class.'">' .__($label,'supreme'). __( '[entry-terms taxonomy="'.$taxonomy.'"] [entry-terms taxonomy="'.$tag_taxonomy.'" before="'.__($tags_label,'supreme')." ".'"]', 'supreme' ) . '</div>' );
 }
 }
 /**
@@ -1239,7 +1236,7 @@ function supreme_comment_form_defaults( $arg ) {
 		$arg['comment_field'] .= '<div class="comment_column2">'.$fields['author'].$fields['email'].$fields['url'].'</div>';
 	}
 	if($post->post_type != 'post')
-		$arg['label_submit'] = __('Post Review',THEME_DOMAIN);
+		$arg['label_submit'] = __('Post Review','supreme');
 	return $arg;
 }
 

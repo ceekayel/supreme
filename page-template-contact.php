@@ -52,20 +52,18 @@ if($_POST['contact_s'])
 			$url =  $_REQUEST['request_url'].'?msg=success'	;
 		}
 		wp_redirect($url);
-		//echo "<script type='text/javascript'>location.href='".$url."';</script>";
 	}
-	
-	if(file_exists(WP_CONTENT_DIR.'/plugins/wp-recaptcha/recaptchalib.php') && is_plugin_active('wp-recaptcha/wp-recaptcha.php') )
+	if(!file_exists(WP_CONTENT_DIR.'/plugins/are-you-a-human/areyouahuman.php') && !is_plugin_active('are-you-a-human/areyouahuman.php') && $captcha == 1 )
 	{
-		require_once(WP_CONTENT_DIR.'/plugins/wp-recaptcha/recaptchalib.php');
-		$a = get_option("recaptcha_options");
-		$privatekey = $a['private_key'];
-		$resp = recaptcha_check_answer ($privatekey,
-				getenv("REMOTE_ADDR"),
-				$_POST["recaptcha_challenge_field"],
-				$_POST["recaptcha_response_field"]);
-								
-		if ( $resp->is_valid == "" ) {
+		/*fetch captcha private key*/
+		$privatekey = $tmpdata['secret'];
+		/*get the response from captcha that the entered captcha is valid or not*/
+		$response = wp_remote_get("https://www.google.com/recaptcha/api/siteverify?secret=".$privatekey."&response=".$_REQUEST["g-recaptcha-response"]."&remoteip=".getenv("REMOTE_ADDR"));
+		/*decode the captcha response*/
+		$responde_encode = json_decode($response['body']);
+		/*check the response is valid or not*/
+		if (!$responde_encode->success)
+		{
 			if(strstr($_REQUEST['request_url'],'?'))
 			{
 				$url =  $_REQUEST['request_url'].'&ecptcha=captch';	
@@ -79,7 +77,7 @@ if($_POST['contact_s'])
 			$data = $_POST;
 			send_contact_email($data);
 		}
-	}elseif(file_exists(WP_CONTENT_DIR.'/plugins/are-you-a-human/areyouahuman.php') && is_plugin_active('are-you-a-human/areyouahuman.php') )
+	}elseif(file_exists(WP_CONTENT_DIR.'/plugins/are-you-a-human/areyouahuman.php') && is_plugin_active('are-you-a-human/areyouahuman.php') && $captcha == 1 )
 	{
 		require_once(WP_CONTENT_DIR.'/plugins/are-you-a-human/areyouahuman.php');
 		require_once(WP_CONTENT_DIR.'/plugins/are-you-a-human/includes/ayah.php');		
@@ -119,7 +117,7 @@ if($_POST['contact_s'])
 <?php do_atomic( 'open_entry' ); // supreme_open_entry ?>
 <?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
 <div class="entry-content">
-<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', T_DOMAIN ) ); ?>
+<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'supreme' ) ); ?>
 </div>
 <!-- .entry-content -->
 
@@ -156,7 +154,7 @@ if($_REQUEST['msg'] == 'success'){
 			echo '<div class="error_msg">'.$incorrect_field.'</div>';
 		}
 		if(isset($_REQUEST['ecptcha']) && $_REQUEST['ecptcha'] == 'notplay' && !isset($_REQUEST['msg'])) {
-			$incorrect_field = __("ERROR: Please play the game to register.",T_DOMAIN);
+			$incorrect_field = __("ERROR: Please play the game to register.",'supreme');
 			echo '<div class="error_msg">'.$incorrect_field.'</div>';
 		}?>
 
@@ -208,13 +206,11 @@ if($_REQUEST['msg'] == 'success'){
                     if($captcha == 1)
                     {
                               $a = get_option("recaptcha_options");
-                              if(file_exists(WP_CONTENT_DIR.'/plugins/wp-recaptcha/recaptchalib.php') && is_plugin_active('wp-recaptcha/wp-recaptcha.php') )
+                              if(!file_exists(WP_CONTENT_DIR.'/plugins/are-you-a-human/areyouahuman.php') && !is_plugin_active('are-you-a-human/areyouahuman.php'))
                               {
-                                        require_once(WP_CONTENT_DIR.'/plugins/wp-recaptcha/recaptchalib.php');
-                                        echo '<label class="recaptcha_claim">'.__('Verify words','supreme').' : </label>  <span>*</span>';
-                                        $publickey = $a['public_key']; // you got this from the signup page ?>
-                                        <div class="form_row clearfix"><?php echo recaptcha_get_html($publickey); ?> </div>
-                    <?php 
+								?>
+                                	<div  id="contact_recaptcha_div"></div>
+                    			<?php 
                               }elseif(file_exists(WP_CONTENT_DIR.'/plugins/are-you-a-human/areyouahuman.php') && is_plugin_active('are-you-a-human/areyouahuman.php') )
                               {
                                         require_once( WP_CONTENT_DIR.'/plugins/are-you-a-human/areyouahuman.php');
@@ -265,10 +261,12 @@ $c(document).ready(function(){
 		if(validate_your_name() & validate_your_email() & validate_your_subject() & validate_your_message() 
 			<?php 
 			 if( $captcha == 1){
-			   if(file_exists(WP_CONTENT_DIR.'/plugins/wp-recaptcha/recaptchalib.php') && is_plugin_active('wp-recaptcha/wp-recaptcha.php')){
-			 ?>
-				& validate_recaptcha() 		
-			 <?php }
+				 if(!file_exists(WP_CONTENT_DIR.'/plugins/are-you-a-human/areyouahuman.php') && !is_plugin_active('are-you-a-human/areyouahuman.php'))
+                 {
+			  	?>
+					& validate_recaptcha() 		
+			 	<?php
+				 }
 			 }  
 			?>
 		  )

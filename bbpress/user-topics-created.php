@@ -13,7 +13,7 @@
 
 	<div id="bbp-author-topics-started" class="bbp-author-topics-started">
 
-		<h2 class="entry-title"><?php _e( 'Forum Topics Created', 'bbpress' ); ?></h2>
+		<h2 class="entry-title"><?php _e( 'Forum Topics Created', 'supreme' ); ?></h2>
 
 		<?php if ( bbp_get_user_topics_started() ) :
 
@@ -23,7 +23,7 @@
 
 		else : ?>
 
-			<div class="bbp-template-notice"><?php bbp_is_user_home() ? _e( 'You have not created any topics.', 'bbpress' ) : _e( 'This user has not created any topics.', 'bbpress' ); ?></div>
+			<div class="bbp-template-notice"><?php bbp_is_user_home() ? _e( 'You have not created any topics.', 'supreme' ) : _e( 'This user has not created any topics.', 'supreme' ); ?></div>
 
 		<?php endif; ?>
 

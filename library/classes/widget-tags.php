@@ -29,7 +29,7 @@ class Hybrid_Widget_Tags extends WP_Widget {
 		/* Set up the widget options. */
 		$widget_options = array(
 			'classname' => 'tags',
-			'description' => esc_html__( 'An advanced widget that gives you total control over the output of your tags.', 'hybrid-core' )
+			'description' => esc_html__( 'An advanced widget that gives you total control over the output of your tags.', 'supreme' )
 		);
 
 		/* Set up the widget control options. */
@@ -41,7 +41,7 @@ class Hybrid_Widget_Tags extends WP_Widget {
 		/* Create the widget. */
 		$this->WP_Widget(
 			'hybrid-tags',			// $this->id_base
-			__( 'Tags', 'hybrid-core' ),		// $this->name
+			__( 'Tags', 'supreme' ),		// $this->name
 			$widget_options,			// $this->widget_options
 			$control_options			// $this->control_options
 		);
@@ -134,7 +134,7 @@ class Hybrid_Widget_Tags extends WP_Widget {
 
 		/* Set up the default form values. */
 		$defaults = array(
-			'title' => esc_attr__( 'Tags', 'hybrid-core' ),
+			'title' => esc_attr__( 'Tags', 'supreme' ),
 			'order' => 'ASC',
 			'orderby' => 'name',
 			'format' => 'flat',
@@ -162,17 +162,17 @@ class Hybrid_Widget_Tags extends WP_Widget {
 
 		/* <select> element options. */
 		$taxonomies = get_taxonomies( array( 'show_tagcloud' => true ), 'objects' );
-		$link = array( 'view' => esc_attr__( 'View', 'hybrid-core' ), 'edit' => esc_attr__( 'Edit', 'hybrid-core' ) );
-		$format = array( 'flat' => esc_attr__( 'Flat', 'hybrid-core' ), 'list' => esc_attr__( 'List', 'hybrid-core' ) );
-		$order = array( 'ASC' => esc_attr__( 'Ascending', 'hybrid-core' ), 'DESC' => esc_attr__( 'Descending', 'hybrid-core' ), 'RAND' => esc_attr__( 'Random', 'hybrid-core' ) );
-		$orderby = array( 'count' => esc_attr__( 'Count', 'hybrid-core' ), 'name' => esc_attr__( 'Name', 'hybrid-core' ) );
+		$link = array( 'view' => esc_attr__( 'View', 'supreme' ), 'edit' => esc_attr__( 'Edit', 'supreme' ) );
+		$format = array( 'flat' => esc_attr__( 'Flat', 'supreme' ), 'list' => esc_attr__( 'List', 'supreme' ) );
+		$order = array( 'ASC' => esc_attr__( 'Ascending', 'supreme' ), 'DESC' => esc_attr__( 'Descending', 'supreme' ), 'RAND' => esc_attr__( 'Random', 'supreme' ) );
+		$orderby = array( 'count' => esc_attr__( 'Count', 'supreme' ), 'name' => esc_attr__( 'Name', 'supreme' ) );
 		$unit = array( 'pt' => 'pt', 'px' => 'px', 'em' => 'em', '%' => '%' );
 
 		?>
 
 		<div class="hybrid-widget-controls columns-3">
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'hybrid-core' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'supreme' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		<p>
@@ -279,11 +279,11 @@ class Hybrid_Widget_Tags extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'pad_counts' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['pad_counts'], true ); ?> id="<?php echo $this->get_field_id( 'pad_counts' ); ?>" name="<?php echo $this->get_field_name( 'pad_counts' ); ?>" /> <?php _e( 'Pad counts?', 'hybrid-core' ); ?> <code>pad_counts</code></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['pad_counts'], true ); ?> id="<?php echo $this->get_field_id( 'pad_counts' ); ?>" name="<?php echo $this->get_field_name( 'pad_counts' ); ?>" /> <?php _e( 'Pad counts?', 'supreme' ); ?> <code>pad_counts</code></label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'hide_empty' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['hide_empty'], true ); ?> id="<?php echo $this->get_field_id( 'hide_empty' ); ?>" name="<?php echo $this->get_field_name( 'hide_empty' ); ?>" /> <?php _e( 'Hide empty?', 'hybrid-core' ); ?> <code>hide_empty</code></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['hide_empty'], true ); ?> id="<?php echo $this->get_field_id( 'hide_empty' ); ?>" name="<?php echo $this->get_field_name( 'hide_empty' ); ?>" /> <?php _e( 'Hide empty?', 'supreme' ); ?> <code>hide_empty</code></label>
 		</p>
 		</div>
 		<div style="clear:both;">&nbsp;</div>

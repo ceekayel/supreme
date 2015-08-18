@@ -13,7 +13,7 @@
 
 		<div class="entry-summary">
 
-			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', T_DOMAIN ); ?></p>
+			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'supreme' ); ?></p>
 			<?php get_search_form(); ?>
 	   
 	 	      <?php 

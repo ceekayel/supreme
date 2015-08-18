@@ -147,7 +147,7 @@ function hybrid_load_textdomain_mofile( $mofile, $domain ) {
 }
 
 /**
- * Filters 'gettext' to change the translations used for the 'hybrid-core' textdomain.  This filter makes it possible 
+ * Filters 'gettext' to change the translations used for the 'supreme' textdomain.  This filter makes it possible 
  * for the theme's MO file to translate the framework's text strings.
  *
  * @since 1.3.0
@@ -159,8 +159,8 @@ function hybrid_load_textdomain_mofile( $mofile, $domain ) {
  */
 function hybrid_gettext( $translated, $text, $domain ) {
 
-	/* Check if 'hybrid-core' is the current textdomain, there's no mofile for it, and the theme has a mofile. */
-	if ( 'hybrid-core' == $domain && !hybrid_is_textdomain_loaded( 'hybrid-core' ) && hybrid_is_textdomain_loaded( hybrid_get_parent_textdomain() ) ) {
+	/* Check if 'supreme' is the current textdomain, there's no mofile for it, and the theme has a mofile. */
+	if ( 'supreme' == $domain && !hybrid_is_textdomain_loaded( 'supreme' ) && hybrid_is_textdomain_loaded( hybrid_get_parent_textdomain() ) ) {
 
 		/* Get the translations for the theme. */
 		if($domain == hybrid_get_child_textdomain()){
@@ -198,8 +198,8 @@ function hybrid_extensions_gettext( $translated, $text, $domain ) {
 		/* If the theme supports the extension, switch the translations. */
 		if ( current_theme_supports( $domain ) ) {
 			/* If the framework mofile is loaded, use its translations. */
-			if ( hybrid_is_textdomain_loaded( 'hybrid-core' ) )
-				$translations = &get_translations_for_domain( 'hybrid-core' );
+			if ( hybrid_is_textdomain_loaded( 'supreme' ) )
+				$translations = &get_translations_for_domain( 'supreme' );
 			if ( hybrid_is_textdomain_loaded( 'theme-layouts' ) )
 				$translations = &get_translations_for_domain( 'theme-layouts' );
 

@@ -17,7 +17,7 @@
 	?>
 	
 	<div class="bbp-template-notice">	
-		<a href="<?php bbp_user_profile_url(); ?>" title="<?php printf( __( 'User %s Profile', 'bbpress' ), esc_attr( bbp_get_displayed_user_field( 'display_name' ) ) ); ?>"><?php _e( 'Back to Profile', 'bbpress' ); ?></a>
+		<a href="<?php bbp_user_profile_url(); ?>" title="<?php printf( __( 'User %s Profile', 'supreme' ), esc_attr( bbp_get_displayed_user_field( 'display_name' ) ) ); ?>"><?php _e( 'Back to Profile', 'supreme' ); ?></a>
 
 	</div>
 

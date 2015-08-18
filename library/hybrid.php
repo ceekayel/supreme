@@ -173,7 +173,7 @@ class Hybrid {
 		$child_textdomain = hybrid_get_child_textdomain();
 
 		/* Load the framework textdomain. */
-		$hybrid->textdomain_loaded['hybrid-core'] = hybrid_load_framework_textdomain( 'hybrid-core' );
+		$hybrid->textdomain_loaded['supreme'] = hybrid_load_framework_textdomain( 'supreme' );
 
 		/* Load theme textdomain. */
 		$hybrid->textdomain_loaded[$parent_textdomain] = load_theme_textdomain( $parent_textdomain );

@@ -78,32 +78,32 @@ function hybrid_get_sidebars() {
 	/* Set up an array of sidebars. */
 	$sidebars = array(
 		'primary' => array(
-			'name' => 	_x( 'Primary', 'sidebar', 'hybrid-core' ),
-			'description' => 	__( 'The main (primary) widget area, most often used as a sidebar.', 'hybrid-core' )
+			'name' => 	_x( 'Primary', 'sidebar', 'supreme' ),
+			'description' => 	__( 'The main (primary) widget area, most often used as a sidebar.', 'supreme' )
 		),
 		'secondary' => array(
-			'name' =>	_x( 'Secondary', 'sidebar', 'hybrid-core' ),
-			'description' =>	__( 'The second most important widget area, most often used as a secondary sidebar.', 'hybrid-core' ),
+			'name' =>	_x( 'Secondary', 'sidebar', 'supreme' ),
+			'description' =>	__( 'The second most important widget area, most often used as a secondary sidebar.', 'supreme' ),
 		),
 		'subsidiary' => array(
-			'name' => 	_x( 'Subsidiary', 'sidebar', 'hybrid-core' ),
-			'description' =>	__( 'A widget area loaded in the footer of the site.', 'hybrid-core' ),
+			'name' => 	_x( 'Subsidiary', 'sidebar', 'supreme' ),
+			'description' =>	__( 'A widget area loaded in the footer of the site.', 'supreme' ),
 		),
 		'header' => array(
-			'name' =>	_x( 'Header', 'sidebar', 'hybrid-core' ),
-			'description' =>	__( "Displayed within the site's header area.", 'hybrid-core' ),
+			'name' =>	_x( 'Header', 'sidebar', 'supreme' ),
+			'description' =>	__( "Displayed within the site's header area.", 'supreme' ),
 		),
 		'before-content' => array(
-			'name' =>	_x( 'Before Content', 'sidebar', 'hybrid-core' ),
-			'description' =>	__( "Loaded before the page's main content area.", 'hybrid-core' ),
+			'name' =>	_x( 'Before Content', 'sidebar', 'supreme' ),
+			'description' =>	__( "Loaded before the page's main content area.", 'supreme' ),
 		),
 		'after-content' => array(
-			'name' =>	_x( 'After Content', 'sidebar', 'hybrid-core' ),
-			'description' =>	__( "Loaded after the page's main content area.", 'hybrid-core' ),
+			'name' =>	_x( 'After Content', 'sidebar', 'supreme' ),
+			'description' =>	__( "Loaded after the page's main content area.", 'supreme' ),
 		),
 		'after-singular' => array(
-			'name' =>	_x( 'After Singular', 'sidebar', 'hybrid-core' ),
-			'description' =>	__( 'Loaded on singular post (page, attachment, etc.) views before the comments area.', 'hybrid-core' ),
+			'name' =>	_x( 'After Singular', 'sidebar', 'supreme' ),
+			'description' =>	__( 'Loaded on singular post (page, attachment, etc.) views before the comments area.', 'supreme' ),
 		)
 	);
 

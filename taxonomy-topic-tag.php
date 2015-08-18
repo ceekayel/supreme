@@ -27,7 +27,7 @@ get_header(); // Loads the header.php template. ?>
 				
 				<div class="loop-meta">
 				
-					<h1 class="loop-title"><?php printf( __( 'Topic Tag: %s', 'bbpress' ), '<span>' . bbp_get_topic_tag_name() . '</span>' ); ?></h1>
+					<h1 class="loop-title"><?php printf( __( 'Topic Tag: %s', 'supreme' ), '<span>' . bbp_get_topic_tag_name() . '</span>' ); ?></h1>
 					
 					<div class="loop-description"><?php bbp_topic_tag_description(); ?></div>
 

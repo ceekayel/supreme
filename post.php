@@ -67,7 +67,7 @@ get_header(); // Loads the header.php template. ?>
                 	<?php get_template_part( 'loop-nav' ); // Loads the loop-nav.php template. ?>
 				
                 	<?php 
-						$theme_options = get_option(supreme_prefix().'_theme_settings');
+						$theme_options = get_option('supreme_theme_settings');
 						$enable_comments = $theme_options['enable_comments'];
 						if ( $enable_comments ) {
 							comments_template( '/comments.php', true ); // Loads the comments.php template. 

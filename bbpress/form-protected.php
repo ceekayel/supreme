@@ -10,6 +10,6 @@
 ?>
 
 	<div class="bbp-form" id="bbp-protected">
-		<h3><?php _e( 'Protected', 'bbpress' ); ?></h3>
+		<h3><?php _e( 'Protected', 'supreme' ); ?></h3>
 		<?php echo get_the_password_form(); ?>
 	</div>

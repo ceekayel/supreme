@@ -12,11 +12,11 @@ class dc_jqmegamenu_widget extends WP_Widget {
 
 		$widget_ops = array(
 			'classname' => $css_class,
-			'description' => sprintf(__('%s','dcjq-mega-menu'), $desc),
+			'description' => sprintf(__('%s','supreme'), $desc),
 		);
-		parent::WP_Widget( 'nav_menu', __('Custom Menu','Templatic'), $widget_ops );
+		parent::WP_Widget( 'nav_menu', __('Custom Menu','supreme'), $widget_ops );
 		
-		$this->WP_Widget($id_base,  sprintf(__('%s','dcjqmegamenu'), $name), $widget_ops);
+		$this->WP_Widget($id_base,  sprintf(__('%s','supreme'), $name), $widget_ops);
 		$this->alt_option_name = $alt_option;
 		
 		//add_action( 'wp_head', array(&$this, 'styles'), 10, 1 );	
@@ -137,12 +137,12 @@ class dc_jqmegamenu_widget extends WP_Widget {
 	</p>
 	<p>
 		<input type="radio" id="<?php echo $this->get_field_id('event1'); ?>" name="<?php echo $this->get_field_name('event'); ?>" value="click"<?php checked( $event, 'click' ); ?> /> 
-		<label for="<?php echo $this->get_field_id('event1'); ?>"><?php _e( 'Click' , 'dcjq-mega-menu' ); ?></label>
+		<label for="<?php echo $this->get_field_id('event1'); ?>"><?php _e( 'Click' , 'supreme' ); ?></label>
 		<input type="radio" id="<?php echo $this->get_field_id('event2'); ?>" name="<?php echo $this->get_field_name('event'); ?>" value="hover"<?php checked( $event, 'hover' ); ?> /> 
-		<label for="<?php echo $this->get_field_id('event2'); ?>"><?php _e( 'Hover' , 'dcjq-mega-menu' ); ?></label>
+		<label for="<?php echo $this->get_field_id('event2'); ?>"><?php _e( 'Hover' , 'supreme' ); ?></label>
 	</p>
 	<p>
-	  <label for="<?php echo $this->get_field_id('rowItems'); ?>"><?php _e( 'Number Items Per Row' , 'dcjq-mega-menu' ); ?></label>
+	  <label for="<?php echo $this->get_field_id('rowItems'); ?>"><?php _e( 'Number Items Per Row' , 'supreme' ); ?></label>
 		<select name="<?php echo $this->get_field_name('rowItems'); ?>" id="<?php echo $this->get_field_id('rowItems'); ?>" >
 			<option value='1' <?php selected( $rowItems, '1'); ?> >1</option>
 			<option value='2' <?php selected( $rowItems, '2'); ?> >2</option>
@@ -159,14 +159,14 @@ class dc_jqmegamenu_widget extends WP_Widget {
 		
 	</p>
 	<input type="hidden" value="<?php echo $subMenuWidth; ?>" class="widefat" id="<?php echo $this->get_field_id('subMenuWidth'); ?>" name="<?php echo $this->get_field_name('subMenuWidth'); ?>" />
-	<p><label for="<?php echo $this->get_field_id('effect'); ?>"><?php _e('Animation Effect:', 'dcjq-mega-menu'); ?>
+	<p><label for="<?php echo $this->get_field_id('effect'); ?>"><?php _e('Animation Effect:', 'supreme'); ?>
 		<select name="<?php echo $this->get_field_name('effect'); ?>" id="<?php echo $this->get_field_id('effect'); ?>" >
 			<option value='fade' <?php selected( $effect, 'fade'); ?> ><?php _e('Fade In','supreme');?></option>
 			<option value='slide' <?php selected( $effect, 'slide'); ?> ><?php _e('Slide Down','supreme');?></option>
 		</select>
 		</label>
 	</p>
-	<p><label for="<?php echo $this->get_field_id('speed'); ?>"><?php _e('Animation Speed:', 'dcjq-mega-menu'); ?>
+	<p><label for="<?php echo $this->get_field_id('speed'); ?>"><?php _e('Animation Speed:', 'supreme'); ?>
 		<select name="<?php echo $this->get_field_name('speed'); ?>" id="<?php echo $this->get_field_id('speed'); ?>" >
 		    <option value='0' <?php selected( $speed, '0'); ?> ><?php _e('No Animation','supreme');?></option>
 			<option value='fast' <?php selected( $speed, 'fast'); ?> ><?php _e('Fast','supreme');?></option>
@@ -177,7 +177,7 @@ class dc_jqmegamenu_widget extends WP_Widget {
 	</p>
 	<p>
 		<input type="checkbox" value="true" class="checkbox" id="<?php echo $this->get_field_id('fullWidth'); ?>" name="<?php echo $this->get_field_name('fullWidth'); ?>"<?php checked( $fullWidth, 'true' ); ?> />
-		<label for="<?php echo $this->get_field_id('fullWidth'); ?>"><?php _e( 'Set Sub Menu To Full Width' , 'dcjq-accordion' ); ?></label>
+		<label for="<?php echo $this->get_field_id('fullWidth'); ?>"><?php _e( 'Set Sub Menu To Full Width' , 'supreme' ); ?></label>
 	</p>
 	
 	

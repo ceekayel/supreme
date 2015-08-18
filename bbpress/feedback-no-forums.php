@@ -10,5 +10,5 @@
 ?>
 
 <div class="bbp-template-notice bbp-feedback-no-forums">
-	<p><?php _e( 'Oh bother! No forums were found here!', 'bbpress' ); ?></p>
+	<p><?php _e( 'Oh bother! No forums were found here!', 'supreme' ); ?></p>
 </div>
