@@ -1,0 +1,18 @@
+{
+  "name": "trick-e/supreme-plugin",
+  "description": "Supreme Wordpress Plugin for SpotFinder, by Templatic.",
+  "license": "proprietary",
+  "keywords": ["wordpress","plugin","plugins","supreme","spotfinder"],
+  "authors": [
+    {
+      "name": "Christopher Legan",
+      "email": "ceekayel@trick-e.com"
+    }
+  ],
+  "type"    : "wordpress-plugin",
+  "require": {
+    "php": ">=5.4 <5.7",
+    "composer/installers": "^1.0"
+  },
+  "minimum-stability": "stable"
+}
